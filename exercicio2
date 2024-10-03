@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Iteração</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <h1>Seja Bem-Vindo!</h1>
+    <input type="number" id="numero" placeholder="Digite um número">
+    <button id="botao">Enviar</button>
+    <div id="resultado"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+
+
+
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin-top: 50px;
+}
+
+#resultado {
+    margin-top: 20px;
+}
+
+
+
+
+
+document.getElementById('botao').onclick = function() {
+    const numero = document.getElementById('numero').value;
+    const resultadoDiv = document.getElementById('resultado');
+    resultadoDiv.innerHTML = '';
+
+    if (numero === '' || isNaN(numero) || numero <= 0) {
+        resultadoDiv.innerHTML = 'Por Favor, insira um número válido';
+    } else {
+        for (let i = 1; i <= numero; i++) {
+            resultadoDiv.innerHTML += `<p>${i}. Pedro Diogo</p>`;
+        }
+    }
+};
+
